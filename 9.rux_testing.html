@@ -30,7 +30,7 @@
       // #1 create the scene, although there's nothing in it just yet
       scene = new THREE.Scene;
       console.log(scene);
-      
+
       // #2 create the camera
       // From documentation: https://threejs.org/docs/#api/en/cameras/PerspectiveCamera
       // PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
@@ -38,6 +38,8 @@
       // aspect — Camera frustum aspect ratio.
       // near — Camera frustum near plane.
       // far — Camera frustum far plane.
+      camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.01, 40);
+      console.log(camera);
 
       // #3 Pick a three.js renderer
       // Documentation: https://threejs.org/docs/#api/en/renderers/WebGLRenderer
