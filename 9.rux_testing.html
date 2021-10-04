@@ -16,7 +16,9 @@
     let camera, scene, renderer;
     let mesh;
 
-    console.log(THREE);
+    // console.log(THREE);
+    init();
+
 
     function init() {
       const container = document.createElement('div');
@@ -26,7 +28,9 @@
       // For more info read: https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
 
       // #1 create the scene, although there's nothing in it just yet
-
+      scene = new THREE.Scene;
+      console.log(scene);
+      
       // #2 create the camera
       // From documentation: https://threejs.org/docs/#api/en/cameras/PerspectiveCamera
       // PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
