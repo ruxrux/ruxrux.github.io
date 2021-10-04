@@ -43,6 +43,10 @@
 
       // #3 Pick a three.js renderer
       // Documentation: https://threejs.org/docs/#api/en/renderers/WebGLRenderer
+      renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(renderer.domElement);
       
 
       // Everything hereafter is optional things we want to add to the scene
