@@ -13,6 +13,9 @@
 <body>
   <script type="module">
 
+    import { ARButton } from 'https://unpkg.com/three@0.126.0/examples/jsm/webxr/ARButton.js';
+    console.log(ARButton);
+
     let camera, scene, renderer;
     let mesh;
 
@@ -86,6 +89,12 @@
       cubeMesh.position.z = -1;
       cubeMesh.position.y = .5;
 
+
+
+      // add the AR butoon to the body of the DOM
+      const button = ARButton.createButton(renderer);
+      console.log(button);
+      document.body.appendChild(button);
 
       window.addEventListener('resize', onWindowResize, false);
     }
