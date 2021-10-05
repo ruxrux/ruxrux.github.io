@@ -123,12 +123,23 @@
       renderer.setAnimationLoop(render);
     }
 
-    function render(){
-      renderer.render(scene, camera);
-    }
+
 
     // render function called on a loop every time the screen is refreshed
     // which typically means 60 times a second (60 frames per second)
+    function render(){
+      renderer.render(scene, camera);
+      rotateObjects();
+    }
+
+    function rotateObjects(){
+
+      mesh.rotation.y = mesh3.rotation.y -.01;
+      mesh3.rotation.x = mesh3.rotation.x -.04;
+
+    }
+
+
 
   </script>
 </body>
