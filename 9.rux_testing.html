@@ -17,7 +17,7 @@
     console.log(ARButton);
 
     let camera, scene, renderer;
-    let mesh;
+    let mesh, mesh3;
 
     // console.log(THREE);
     init();
@@ -81,16 +81,28 @@
       });
       const mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
-      mesh.position.set(0,0,-0.5);
-      // CUBE
-      const geometry2 = new THREE.BoxGeometry(.3, .3, .3); //1, 1, 1 
-      const material2 = new THREE.MeshBasicMaterial({color : 0xe06666});
-      const cubeMesh = new THREE.Mesh(geometry2, material2);
-      scene.add(cubeMesh); // 0 ,0 ,0
-      cubeMesh.position.z = -1;
-      cubeMesh.position.y = .5;
+      mesh.position.set(.2, 0,-0.5);
 
 
+
+      // // CUBE
+      // const geometry2 = new THREE.BoxGeometry(.3, .3, .3); //1, 1, 1 
+      // const material2 = new THREE.MeshBasicMaterial({color : 0xe06666});
+      // const cubeMesh = new THREE.Mesh(geometry2, material2);
+      // scene.add(cubeMesh); // 0 ,0 ,0
+      // cubeMesh.position.z = -1;
+      // cubeMesh.position.y = .5;
+
+
+
+      // TORUS
+      const geometry3 = new THREE.TorusGeometry(.15, .05, 12, 50);
+      const material3 = new THREE.MeshBasicMaterial({
+        color: new THREE.Color("rgb(253, 253, 150)")
+      });
+      mesh3 = new THREE.Mesh(geometry3, material3);
+      scene.add(mesh3);
+      mesh3.position.set(-.2, 0, -.4);
 
       // add the AR butoon to the body of the DOM
       const button = ARButton.createButton(renderer);
