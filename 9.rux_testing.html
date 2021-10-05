@@ -82,14 +82,19 @@
       // loader (model url, onload callback, onProgress callback, onError callback)
       loader.load(
         modelURL, 
+
+        // gets called once when the model has finished loading
         function (gltf){
           const model = gltf.scene;
           console.log(model);
+          model.position.y = 5;
           scene.add(model);
         },
+        // optional function for showing progress
         function(xhr){
           console.log(xhr);
         },
+        // optional function for logging errors if there are error on loading
         function(error){
           console.log(error);
         }
