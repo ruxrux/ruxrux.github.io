@@ -21,7 +21,7 @@
     let camera, scene, renderer;
     let mesh, mesh3;
     let loader;
-    const model;
+    let model;
 
     // console.log(THREE);
     init();
@@ -170,7 +170,7 @@
     }
 
     let degrees = 0;
-    
+
     function rotateModel(){
       if(model !== undefined){
         degrees = degrees + 0.2;
