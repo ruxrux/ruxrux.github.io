@@ -127,14 +127,15 @@
 
     function rotateObjects(){
 
-      // mesh.rotation.y = mesh.rotation.y -.01;
+      mesh.rotation.y = mesh.rotation.y -.01;
       // mesh3.rotation.x = mesh3.rotation.x -.04;
       
     }
-    
+
     // render function called on a loop every time the screen is refreshed
     // which typically means 60 times a second (60 frames per second)
     function render(){
+     
       rotateObjects();
 
       renderer.render(scene, camera);
