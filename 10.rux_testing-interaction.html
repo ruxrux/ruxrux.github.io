@@ -90,6 +90,16 @@
     function onSelect(){
       console.log("select");
 
+      const geometry = new THREE.ConeGeometry(.1, .2, 32);
+      const material = new THREE.MeshPhongMaterial(
+      {
+        color: 0xffffff * Math.random(),
+        shininess: 6,
+        flatShading: true,
+        transparent: 1,
+        opacity: .8
+      });
+      
     }
 
 
