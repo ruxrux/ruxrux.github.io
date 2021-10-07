@@ -90,7 +90,9 @@
     function onSelect(){
       console.log("select");
 
-      const geometry = new THREE.ConeGeometry(.1, .2, 32).rotateX(Math.PI / 2);
+      const geometry = new THREE.ConeGeometry(.1, .2, 32);
+      geometry.rotateX(Math.PI / 2);
+
       const material = new THREE.MeshPhongMaterial(
       {
         color: 0xffffff * Math.random(),
