@@ -75,9 +75,9 @@
 
 
 
-      // controller = renderer.xr.getController(0);
-      // controller.addEventListener('select', onSelect);
-      // scene.add(controller);
+      controller = renderer.xr.getController(0);
+      controller.addEventListener('select', onSelect);
+      scene.add(controller);
       // console.log(controller);
 
       // add reticle to scenen
@@ -110,27 +110,24 @@
 
     }
 
-    // function onSelect(){
-    //   console.log("select");
+    function onSelect(){
+      console.log("select");
 
-    //   const geometry = new THREE.ConeGeometry(.1, .2, 32);
-    //   geometry.rotateX(Math.PI / 2);
+      if(reticle.visible){
 
-    //   const material = new THREE.MeshPhongMaterial(
-    //   {
-    //     color: 0xffffff * Math.random(),
-    //     shininess: 6,
-    //     flatShading: true,
-    //     transparent: 1,
-    //     opacity: .8
-    //   });
+        const geometry = new THREE.CylinderBufferGeometry(0, .05, .2, 32);
+        const material = new THREE.MeshPhongMaterial(
+          {
+            color: 0xffffff * Math.random()
+          });
+        const mesh = new THREE.Mesh(geometry, material);
+        
+        mesh.position.setFromMatrixPosition(reticle.matrix);
+        mesh.quaternion.setFromRotationMatrix(reticle.matrix);
+        scene.add(mesh);
 
-    //   mesh = new THREE.Mesh(geometry, material);
-    //   mesh.position.set(0,0, -.5).applyMatrix4(controller.matrixWorld);
-    //   mesh.quaternion.setFromRotationMatrix(controller.matrixWorld);
-
-    //   scene.add(mesh);
-    // }
+      }
+    }
 
 
     function onWindowResize() {
