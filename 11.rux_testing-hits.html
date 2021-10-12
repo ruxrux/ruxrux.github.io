@@ -155,6 +155,11 @@
         }
       }
 
+        if(hitTestSourceInitialized){
+          const hitTestResults = frame.getHitTestResults(hitTestSource);
+          console.log(hitTestResults);  
+        }
+
       renderer.render(scene, camera);
     }
 
