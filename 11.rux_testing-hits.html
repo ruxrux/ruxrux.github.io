@@ -23,6 +23,9 @@
     let mesh, reticle;
 
 
+    let hitTestSource = null;
+    let localSpace = null;
+    let hitTestSourceInitialized  = false;
     // console.log(THREE);
     init();
     animate();
@@ -143,7 +146,11 @@
 
     // render function called on a loop every time the screen is refreshed
     // which typically means 60 times a second (60 frames per second)
-    function render(){
+    function render(timestamp, frame){
+
+      if(frame){
+
+      }
 
       renderer.render(scene, camera);
     }
