@@ -150,10 +150,34 @@
 
       if(frame){
 
+        if(!hitTestSourceInitialized){
+          initializeHitTestSource();
+        }
       }
 
       renderer.render(scene, camera);
     }
+
+
+    async function initializeHitTestSource(){
+
+      const session = renderer.xr.getSession();
+
+      const viewerSpace = await session.requestReferenceSpace("viewer");
+      hitTestSource = await session.requestHitTestSource({space: viewerSpace});
+      console.log(hitTestSource);
+
+      localSpace = await session.requestReferenceSpace("local");
+
+      hitTestSourceInitialized = true;
+
+
+      session.addEventListener("end", () => {
+        hitTestSourceInitialized = false;
+        hitTestSource = null;
+      });
+    }
+
 
 
 
